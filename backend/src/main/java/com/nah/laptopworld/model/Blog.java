@@ -1,4 +1,4 @@
-package com.nah.laptopworld.domain;
+package com.nah.laptopworld.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,7 @@
-package com.nah.laptopworld.domain;
+package com.nah.laptopworld.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +17,9 @@ public class LaptopVariant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotNull
+    @NotEmpty(message = "Tên biến thể không được để trống")
+    private String variantName;
     @ManyToOne
     @JoinColumn(name = "laptop_model_id")
     private LaptopModel laptopModel;

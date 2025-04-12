@@ -1,4 +1,4 @@
-package com.nah.laptopworld.domain;
+package com.nah.laptopworld.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -27,8 +27,8 @@ public class Brand {
     private String logo;
 
     @NotEmpty(message = "Mô tả thương hệu không được để trống")
-    @Column(columnDefinition = "MediumText")
-    private String desc;
+    @Lob
+    private String description;
 
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
     private List<LaptopModel> laptopModels;
